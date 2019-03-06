@@ -9,7 +9,9 @@ module Zillow
     end
 
     def pull_property_details(zpid)
-      logger.info('Starting pull_property_details for ' + zpid)
+      log('Starting pull_property_details for ' + zpid)
+      log(home_valuation(zpid).as_json.deep_symbolize_keys!)
+      log('Completed pull_property_details for' + zpid)
     end
 
     private
@@ -20,6 +22,13 @@ module Zillow
       end
     end
 
+    def home_valuation(zpid)
+      @home_valuation ||= Rubillow::HomeValuation.zestimate(zpid: zpid)
+    end
 
+    def log(message)
+      timestamp = Time.current
+      Rails.logger.info("[#{timestamp}] - #{message}")
+    end
   end
 end

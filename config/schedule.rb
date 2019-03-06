@@ -18,3 +18,10 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+set :output, "#{path}/log/cron.log"
+
+
+# Update Zillow Property details
+every 1.minute do
+  runner "lib/zillow/zillow_jobs.rb"
+end
