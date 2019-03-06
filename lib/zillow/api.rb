@@ -9,9 +9,9 @@ module Zillow
     end
 
     def pull_property_details(zpid)
-      log('Starting pull_property_details for ' + zpid)
-      log(home_valuation(zpid).as_json.deep_symbolize_keys!)
-      log('Completed pull_property_details for' + zpid)
+      log("Starting pull_property_details for #{zpid}")
+      Zillow::HomeValuation.add_new_response(home_valuation(zpid).as_json.deep_symbolize_keys!)
+      log("Completed pull_property_details for #{zpid}")
     end
 
     private

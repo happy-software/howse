@@ -22,6 +22,6 @@ set :output, "#{path}/log/cron.log"
 
 
 # Update Zillow Property details
-every 1.minute do
+every 1.day, at: '05:00' do
   runner "lib/zillow/zillow_jobs.rb"
 end
