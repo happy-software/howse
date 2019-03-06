@@ -47,6 +47,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-# Howse specific gems
+##### Howse specific gems #####
 
+# Zillow API wrapper
 gem 'rubillow'
+
+# for cron jobs
+gem 'whenever', require: false
