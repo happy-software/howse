@@ -1,6 +1,8 @@
 module ZillowReport
   class HomeValuation < ApplicationRecord
 
+    belongs_to :house
+
     def self.add_new_response(response)
       response               = response.deep_symbolize_keys!
       valuation              = ZillowReport::HomeValuation.new
