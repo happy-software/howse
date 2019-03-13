@@ -1,7 +1,7 @@
 module ZillowReport
   class HomeValuation < ApplicationRecord
 
-    belongs_to :house, foreign_key: 'zpid'
+    belongs_to :house, primary_key: 'zpid'
 
     def self.add_new_response(response)
       response               = response.deep_symbolize_keys!
