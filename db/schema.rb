@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_020837) do
+ActiveRecord::Schema.define(version: 2019_03_07_014628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,6 @@ ActiveRecord::Schema.define(version: 2019_03_13_020837) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "zpid"
-    t.integer "house_id"
-    t.index ["house_id"], name: "index_zillow_report_home_valuations_on_house_id"
     t.index ["zpid"], name: "index_zillow_report_home_valuations_on_zpid"
   end
 
