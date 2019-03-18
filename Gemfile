@@ -55,3 +55,6 @@ gem 'rubillow'
 
 # for cron jobs
 gem 'whenever', require: false
+
+# To allow front end to hit it
+gem 'rack-cors', require: 'rack/cors'
