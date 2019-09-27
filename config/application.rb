@@ -32,10 +32,10 @@ module Howse
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    use Rack::Cors do
+    config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: :any
+        resource '*', headers: :any, methods: [:get, :post, :options]
       end
     end
   end
