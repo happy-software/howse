@@ -17,4 +17,3 @@ Work backwards to see how to get that information. Then design an API for that i
 3. What properties similar to property X exist? 
     - What are their values?
     - What do they rent at? 
-4. 
