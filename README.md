@@ -17,3 +17,8 @@ Work backwards to see how to get that information. Then design an API for that i
 3. What properties similar to property X exist? 
     - What are their values?
     - What do they rent at? 
+
+### Some Features
+
+- Look up a property's Zillow Property ID (ZPID) given it's address.
+- Collect a property's daily Zillow Zestimate (estimated value)
