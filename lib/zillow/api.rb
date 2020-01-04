@@ -24,6 +24,7 @@ module Zillow
       citystatezip = "#{address[:city]}, #{address[:state]} #{address[:zip]}"
       result = Rubillow::HomeValuation.search_results(address: address[:street_address], citystatezip: citystatezip)
 
+      # TODO: No need to return an array; update the front end at some point to do this too
       return [{address: "Not Found", zpid: "Not Found"}] unless result.success?
       [{address: "#{result.address[:street]}, #{result.address[:city]}, #{result.address[:state]} #{result.address[:zip]}", zpid: result.zpid}]
     end
