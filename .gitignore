@@ -55,4 +55,5 @@ node_modules/
 .idea
 
 # Local ENV file for dev testing
+.env*
 .env.development
