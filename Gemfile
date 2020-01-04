@@ -58,3 +58,5 @@ gem 'whenever', require: false
 
 # To allow front end to hit it
 gem 'rack-cors', require: 'rack/cors'
+
+gem 'dotenv-rails', groups: [:development, :test]
