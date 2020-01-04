@@ -14,6 +14,20 @@ module Zillow
       log("Completed pull_property_details for #{zpid}")
     end
 
+    def find_property(address)
+      raise ArgumentError.new('Missing Street Address') unless address[:street_address]
+      raise ArgumentError.new('Missing City')           unless address[:city]
+      raise ArgumentError.new('Missing State')          unless address[:state]
+      raise ArgumentError.new('Missing Zip Code')       unless address[:zip]
+
+      log("Starting ZPID lookup for #{address}")
+      citystatezip = "#{address[:city]}, #{address[:state]} #{address[:zip]}"
+      result = Rubillow::HomeValuation.search_results(address: address[:street_address], citystatezip: citystatezip)
+
+      return [{address: "Not Found", zpid: "Not Found"}] unless result.success?
+      [{address: "#{result.address[:street]}, #{result.address[:city]}, #{result.address[:state]} #{result.address[:zip]}", zpid: result.zpid}]
+    end
+
     private
 
     def connect!
