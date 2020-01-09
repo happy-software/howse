@@ -7,6 +7,10 @@ class Api::V1::ZillowSearchController < ApplicationController
     render json: addresses
   end
 
+  def track_property
+    House.add_new_property(params[:address])
+  end
+
   private
 
   def zillow_search_params
