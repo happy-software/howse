@@ -2,7 +2,7 @@ require 'zillow/zillow_jobs'
 
 namespace :zillow_jobs do
 
-  desc 'Say hello!'
+  desc 'Collects Zillow Zestimates'
   task :run => :environment do
     ZillowJobs.run!
   end
