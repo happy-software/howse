@@ -26,7 +26,13 @@ module Zillow
 
       # TODO: No need to return an array; update the front end at some point to do this too
       return [{address: "Not Found", zpid: "Not Found"}] unless result.success?
-      [{address: "#{result.address[:street]}, #{result.address[:city]}, #{result.address[:state]} #{result.address[:zip]}", zpid: result.zpid}]
+      address = {
+          street:      result.address[:street],
+          city:        result.address[:city],
+          state:       result.address[:state],
+          zip_code:    result.address[:zipcode],
+      }
+      [{address: address, zpid: result.zpid}]
     end
 
     private
