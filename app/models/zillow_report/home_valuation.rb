@@ -9,7 +9,7 @@ module ZillowReport
       valuation.raw_response = response.delete(:xml).to_s
       valuation.details      = response
       valuation.zpid         = response[:zpid]
-      valuation.house        =
+      valuation.house        = House.where(zpid: response[:zpid]).first
 
       valuation.save!
     end
