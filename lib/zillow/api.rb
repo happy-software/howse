@@ -44,7 +44,7 @@ module Zillow
     end
 
     def home_valuation(zpid)
-      @home_valuation ||= Rubillow::HomeValuation.zestimate(zpid: zpid)
+      Rubillow::HomeValuation.zestimate(zpid: zpid)
     end
 
     def log(message)
