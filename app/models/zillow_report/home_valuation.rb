@@ -13,6 +13,10 @@ module ZillowReport
 
       valuation.save!
     end
+
+    def price
+      self.details['price']
+    end
   end
 end
 
